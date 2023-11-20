@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title User Details
+  body
+    h1 User Details
+    if user
+      p Name: #{user.name}
+      if user.todos.length > 0
+        ul
+          each todo in user.todos
+            li= todo
+      else
+        p No todos found for this user
+    else
+      p User not found
